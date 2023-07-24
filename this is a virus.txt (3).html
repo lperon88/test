@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Virus Detected</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style>
+body { border:none; margin: 0px 0px 0px 0px; background: #d5d5d5; font-family: Verdana, Arial, Sans Serif; margin: 0px 0px 0px 0px; }
+
+h1 { font-size: 14pt; font-family: Arial Narrow, Arial, sans-serif; white-space: nowrap; font-weight: normal; margin-bottom: 8px; }
+h2 { font-size: 14pt; font-family: Arial Narrow, Arial, sans-serif; white-space: nowrap; margin-bottom: 2px; }
+h3 { font-size: 10pt; font-family: Arial, Arial, sans-serif; white-space: nowrap; font-weight: normal; margin-bottom: 0px; }
+h3 img { vertical-align: middle; }
+
+body > table {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 3px 16px rgba(0, 0, 0, 0.5);
+}
+
+.banner { margin: 0px; border: 1px solid #555555; background: #555555; }
+.banner .fade { background: #555555; }
+.banner #bannerContent { color: white; width: 100%; table-layout: fixed; text-align: right; }
+.banner #bannerContent #bannerContentRH { width: 590px; }
+.banner h1 { font-size: 32px; margin-right: 16px; margin-bottom: 0px; font-family: Arial Narrow, Arial, sans-serif; font-weight: normal;color: white; text-align: right; white-space: nowrap; }
+.banner h2 { font-size: 16px; margin-right: 16px; margin-top: 0px; font-family: Verdana, Arial; font-weight: normal; color: white; text-align: right; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; -o-text-overflow: ellipsis; width: 98%;}
+
+#content { width: 100%; overflow:visible; margin: 0px; background-color: white; border-bottom: 1px solid #555555; border-left: 1px solid #555555; border-right: 1px solid #555555; }
+html > body .content { width: auto; }
+
+.box { margin: 0px; background-color: #555555; border-bottom: 1px solid #555555; border-left: 1px solid #555555; border-right: 1px solid #555555; }
+.box img {
+  height: 24px;
+  width: 90px;
+  padding-top:3px;
+  padding-bottom:3px;
+}
+
+.text { font-size: 8pt; font-family: Verdana, Arial, Helvetica, sans-serif; color: white;}
+
+body.progress .bargraph { height: 14px; width: 100%; overflow: hidden; background-color: #d5d5d5; border-radius: 8px; -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.1); box-shadow: inset 0 1px 2px rgba(0,0,0,.1);}
+body.progress .bargraph .low { background-color: #2a3175;  }
+body.progress .bargraph .high { background-color: #E95724; }
+body.progress .bargraph .empty { }
+
+/* Make a button look like a link. */
+button.asLink {
+  align-items: normal;
+  background-color: rgba(0,0,0,0);
+  border-color: rgb(0, 0, 238);
+  border-style: none;
+  box-sizing: content-box;
+  color: rgb(0, 0, 238); 
+  cursor: pointer;
+  display: inline;
+  font: inherit;
+  height: auto;
+  padding: 0;
+  perspective-origin: 0 0;
+  text-align: start;
+  text-decoration: underline;
+  transform-origin: 0 0;
+  width: auto;
+  outline: 1 solid red;
+  -moz-appearance: none;
+  -webkit-logical-height: 1em;
+  -webkit-logical-width: auto;
+}
+
+@supports (-moz-appearance:none) { 
+  button.asLink::-moz-focus-inner {
+    border: none;
+    padding: 0;
+  }
+
+  button.asLink:focus {
+    outline-style: dotted;
+    outline-width: 1px;
+  }
+}
+
+/* Everything below here is common */
+.url { font-size: 8pt; font-family: Verdana, Arial, Helvetica, sans-serif; white-space: nowrap; }
+.details td { font-size: 8pt; font-family: Verdana, Arial, Helvetica, sans-serif; white-space: nowrap; }
+
+button.submit,
+input[type="submit"],
+input[type="button"] {
+    cursor: pointer;
+    padding: 3px 3px 3px 3px;
+    background: #00a3db;
+    color:white;
+    width: 120px;
+    height: 26px;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+button.submit:focus,
+button.submit:hover,
+input[type="submit"]:focus,
+input[type="submit"]:hover,
+input[type="button"]:focus,
+input[type="button"]:hover {
+    background:  #40bae4;
+    outline: none;
+}
+
+button.submit[disabled],
+input[type="submit"][disabled],
+input[type="button"][disabled] {
+    opacity: 0.5;
+    color: rgba(255, 255, 255, 0.9);
+    cursor: not-allowed;
+    outline: none;
+}
+
+/* Part of blockpage.htm. Not used, do we need it? */
+.overrideDiv { margin: 4px 0px 4px 0px; }
+.overrideBtn { margin: 4px 0px 4px 0px; text-align:center; }
+/* Part of blockpage.htm */
+
+</style>
+</head>
+<body class="red">
+    <table style="width: 700px;" cellpadding="0" cellspacing="0">
+        <tr>
+          <td>
+            <div class="banner">
+              <div style="width: 100%;">
+                <table id="bannerContent" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td><img src="http://10.60.155.38:8080/blockimages/corplogo.jpg" width="100" height="68" border="0" style="margin: 2px 2px 2px 4px;"/></td>
+                    <td width="100%" class="fade"><h1 id="title">Virus Detected</h1>
+                      <h2 id="subtitle">http://goanywhere.mft/this is a virus.txt</h2></td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+            <div style="width: 700px; overflow: auto; padding: 20px;" id="content">
+              <table width="width: 660px">
+                <tr>
+                  <td width="100%"><p dir="ltr" style="MARGIN-RIGHT: 0px" align="center"><font face="arial,helvetica,sans-serif" color="#ff0000" size="5"><strong>Restricted Access</strong></font></p><blockquote dir="ltr" style="MARGIN-RIGHT: 0px"><blockquote dir="ltr" style="MARGIN-RIGHT: 0px"><p dir="ltr" style="MARGIN-RIGHT: 0px" align="left"><font face="arial,helvetica,sans-serif">The web page you tried to open contains material that contravenes the company's Acceptable Usage Policy.</font></p><p dir="ltr" style="MARGIN-RIGHT: 0px" align="left"><font face="arial,helvetica,sans-serif">If you believe we have made an error in restricting this web page, please contact your IT help desk.</font></p><p align="left"><font face="arial,helvetica,sans-serif">Thank you.</font></p></blockquote></blockquote></td>
+                  <td align="right" valign="top"><img border="0" src="http://10.60.155.38:8080/blockimages/bfc4533e-b242-4698-9aa1-28403939572e.jpg"/></td>
+                </tr>
+                <tr>
+                    <td colspan="2"></td>
+                </tr>
+              </table>
+            </div>
+            <div class="box" style="text-align:center;">
+              <table style="margin-left: auto; margin-right: auto;">
+                <tr>
+                  <td class="text">Your Internet experience is protected by </td>
+                  <td><img src="http://10.60.155.38:8080/images/msw.gif" alt="Clearswift" width="120" height="32" border="0"/></td>
+                </tr>
+              </table>
+            </div>
+          </td>
+        </tr>
+    </table>
+
+<script type="text/javascript">
+
+function getRef(divID)
+{
+    if( document.layers ) { //Netscape layers
+        return document.layers[divID]; }
+    if( document.getElementById ) { //DOM; IE5, NS6, Mozilla, Opera
+        return document.getElementById(divID); }
+    if( document.all ) { //Proprietary DOM; IE4
+        return document.all[divID]; }
+    if( document[divID] ) { //Netscape alternative
+        return document[divID]; }
+    return false;
+}
+
+function shortenUrl(url, maxlen)
+{
+	var sep = url.lastIndexOf('/');
+	
+	if (sep > 0)
+	{
+		var path = url.substring(0,sep);
+		var filename = url.substring(sep);
+		var pathLength  = maxlen - filename.length;
+
+		if (pathLength > 3)	//	Path would still have some length
+		{  
+            path = ellipsisEndOfString(path, pathLength);
+            return path + filename;
+        }
+		else
+		{
+            //filename is too long, right truncate the whold url
+            return (ellipsisEndOfString(url, maxlen));
+		}
+	}
+	else	//	No / separator
+		return ellipsisEndOfString(url, maxlen);
+}
+function ellipsisEndOfString(x, maxlen)
+{
+	if (x.length <= maxlen)
+		return x
+	else if (maxlen < 4)
+		return x.substring(0, maxlen) // no room for ellipsis
+	else return x.substring(0, maxlen-3) + "...";
+}
+
+function resizeWindow(targetWidth, targetHeight)
+{
+	if (window.innerWidth)
+	{
+	    iWidth = window.innerWidth;
+	    iHeight = window.innerHeight;
+	}
+	else
+	{
+	    iWidth = document.body.clientWidth;
+	    iHeight = document.body.clientHeight;
+	}
+	
+	if ((iWidth < targetWidth) || (iHeight < targetHeight))
+	{
+		window.resizeBy(Math.max(iWidth,targetWidth), Math.max(iHeight,targetHeight));
+	}
+}
+
+function ellipsisStartOfString(x, maxlen)
+{
+	if (x.length <= maxlen)
+		return x
+	else if (maxlen < 4)
+		return x.substring(x.length, x.length+maxlen) // no room for ellipsis
+	else return "..." + x.substring(x.length-maxlen+3, x.length);
+}
+
+getRef('subtitle').innerHTML = shortenUrl(getRef('subtitle').innerHTML, 50);
+getRef('title').innerHTML = shortenUrl(getRef('title').innerHTML, 40);
+
+if (window.frameElement != null)
+{
+	getRef('containingTable').width = 0;
+}
+else
+{
+	resizeWindow(800,600);
+}
+
+function download(id, filename)
+{
+    var elHtml = document.getElementById(id).innerHTML;
+    var blob = new Blob([elHtml], {type: "application/pkix-cert"});
+    
+    // IE 10+ 
+    if (window.navigator.msSaveBlob)
+    { 
+        window.navigator.msSaveBlob(blob, filename);
+    }
+    else
+    {
+        // use Blob so that correct OS line feeds are used
+        var url = window.URL.createObjectURL(blob);
+    
+        var a = document.body.appendChild(
+            document.createElement("a")
+        );
+        a.download = filename;
+        a.href = url;
+        a.click(); // Trigger a click on the element
+    }
+}
+
+(
+    function() 
+    {
+        var visitSiteAnyway = function() 
+        {
+            var request = new XMLHttpRequest();
+            request.onreadystatechange = function () 
+            {
+                if (request.readyState === 4)
+                {
+                    window.location.reload(true);
+                }
+            };
+            request.open('GET', document.baseURI, true); // true because asynchronous
+            request.setRequestHeader('X-CS-BypassCertificateVerificationFailure', 'true');
+            request.send();
+            button.removeEventListener("click", visitSiteAnyway);
+            button.disabled = True;
+        };
+        var button = document.getElementById("visitSiteAnyway");
+        if (button)
+        {
+            button.addEventListener("click", visitSiteAnyway);
+        }
+    }
+)();
+</script>
+</body>
+</html>
